@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 導入手順
 
-## Getting Started
+## create-next-app
 
-First, run the development server:
+- bunx create-next-app@latest
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+bunx create-next-app@latest {プロジェクト名}
+✔ Would you like to use TypeScript? … Yes
+✔ Would you like to use ESLint? … No
+✔ Would you like to use Tailwind CSS? … Yes
+✔ Would you like to use `src/` directory? … Yes
+✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to customize the default import alias (@/*)? … Yes
+✔ What import alias would you like configured? … @/*
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## biomeの導入
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- bun add --dev --exact @biomejs/biome
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- bunx @biomejs/biome init
 
-## Learn More
+- biome.jsonの書き換え。
 
-To learn more about Next.js, take a look at the following resources:
+- .vscodeファイルとセッティングの追加
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 一度vscodeを先起動して動作確認
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- package.jsonにscriptを追加
 
-## Deploy on Vercel
+## 記述の整理
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 不要なファイルと記述を削除して一度フォーマットの実行
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- page.tsx, layout.tsx, globals.css, アイコンなどの削除
+
+- 一度、consoleからフォーマットを実行
+
+- bunx biome lint . 
+
+- bunx biome format --write . 
+
+## lefthookの導入
+
+- bun install lefthook --save-dev
+
+- bunx npx lefthook install
+
+- lefthook.ymlファイルの書き換え
+
+- package.jsonのコマンド追加の確認
+
+- 一度vscodeを再起動する
+
+- errorの記述がある状態でコミットができないことを確認。
+
+- フォーマットエラーの状態のコミットができないことを確認
+
+- 正しい記述に修正してコミットができることを確認。
