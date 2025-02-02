@@ -11,9 +11,10 @@
     "check": "biome check --apply ./src/**/*"
   },
   "dependencies": {
+    "lefthook": "^1.10.10",
+    "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
